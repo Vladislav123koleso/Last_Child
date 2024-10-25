@@ -6,6 +6,7 @@ namespace LastChild
     public class Mechanism : MonoBehaviour
     {
         [SerializeField] private Switcher _switcher;
+        [SerializeField] private Collider _invisibleWall;
         [SerializeField] private Transform _leftGate;
         [SerializeField] private Transform _rightGate;
 
@@ -33,6 +34,9 @@ namespace LastChild
                 gate.position = new Vector3(gate.position.x + step, gate.position.y, gate.position.z);
                 yield return new WaitForSeconds(Time.deltaTime);
             }
+
+            if (_invisibleWall.enabled)
+                _invisibleWall.enabled = false;
         }
     }
 }

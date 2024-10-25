@@ -90,6 +90,8 @@ namespace LastChild
 
         private void OnTriggerStay(Collider other)
         {
+            if (_groundLayers.value != 1 << other.gameObject.layer) return;
+
             if (_isGrounded && other.transform.root.localScale.y - Mathf.Round(transform.position.y - other.transform.root.position.y) <= _climbHeight)
             {
                 _climbTarget = other.transform.root;
