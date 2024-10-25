@@ -74,7 +74,7 @@ namespace LastChild
             {
                 foreach (var item in Physics.OverlapSphere(_groundedPosition, _groundedRadius, _interactableLayers))
                 {
-                    item.GetComponentInParent<Obstacle>().Use();
+                    item.GetComponentInParent<Interactable>().Use();
                 }
             }
         }
