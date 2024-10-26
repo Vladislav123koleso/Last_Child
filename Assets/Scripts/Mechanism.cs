@@ -14,6 +14,7 @@ namespace LastChild
         {
             _switcher.OnSwitch += OpenGates;
         }
+
         private void OnDestroy()
         {
             _switcher.OnSwitch -= OpenGates;
