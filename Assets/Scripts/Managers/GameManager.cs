@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject pausePanel;
 
+    public FadeInOut fadeInOut;
+
     private bool isPaused = false;
 
     private void Start()
@@ -17,7 +19,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !fadeInOut.IsFadeImageActive())
         {
             pausePanel.SetActive(!pausePanel.activeSelf);
             TogglePause();
