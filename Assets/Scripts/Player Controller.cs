@@ -19,14 +19,18 @@ namespace LastChild
         private Vector2 _moveDirection;
         private Vector3 _groundedPosition;
         private bool _isGrounded;
-        private bool _canClimb;
+        //private bool _canClimb;
         private Transform _climbTarget;
+
+        private PlayerProgress _playerProgress;
 
         private Rigidbody _rb;
 
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
+
+            _playerProgress = GetComponent<PlayerProgress>();
         }
 
         private void FixedUpdate()
@@ -66,7 +70,7 @@ namespace LastChild
 
         public void OnJump()
         {
-            if (_isGrounded)
+            if (_isGrounded && _playerProgress.CanJump == true)
             {
                 _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             }
@@ -74,7 +78,7 @@ namespace LastChild
 
         public void OnAction()
         {
-            if (_isGrounded)
+            if (_isGrounded && _playerProgress.CanMoveObjects == true)
             {
                 foreach (var item in Physics.OverlapSphere(_groundedPosition, _groundedRadius, _interactableLayers))
                 {
@@ -85,7 +89,7 @@ namespace LastChild
 
         public void OnClimb()
         {
-            if (_isGrounded && _canClimb)
+            if (_isGrounded && _playerProgress.CanClimb == true)
             {
                 //transform.position = new Vector3(_climbTarget.position.x, _climbTarget.position.y + _climbTarget.localScale.y, 0f);
 
@@ -100,20 +104,26 @@ namespace LastChild
             if (_isGrounded && other.transform.root.localScale.y - Mathf.Round(transform.position.y - other.transform.root.position.y) <= _climbHeight)
             {
                 _climbTarget = other.transform.root;
-                _canClimb = true;
+                _playerProgress.CanClimb = true;
             }
             else
             {
                 _climbTarget = null;
-                _canClimb = false;
+                _playerProgress.CanClimb = false;
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
             _climbTarget = null;
-            _canClimb = false;
+            _playerProgress.CanClimb = false;
         }
+
+        public void SetMovementSpeed(float speed)
+        {
+            _movementSpeed = speed;
+        }
+
 
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
