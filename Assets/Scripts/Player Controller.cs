@@ -70,7 +70,7 @@ namespace LastChild
 
         public void OnJump()
         {
-            if (_isGrounded && _playerProgress.CanJump)
+            if (_isGrounded && _playerProgress.CanJump == true)
             {
                 _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             }
@@ -78,7 +78,7 @@ namespace LastChild
 
         public void OnAction()
         {
-            if (_isGrounded && _playerProgress.CanMoveObjects)
+            if (_isGrounded && _playerProgress.CanMoveObjects == true)
             {
                 foreach (var item in Physics.OverlapSphere(_groundedPosition, _groundedRadius, _interactableLayers))
                 {
@@ -89,7 +89,7 @@ namespace LastChild
 
         public void OnClimb()
         {
-            if (_isGrounded && _playerProgress.CanClimb)
+            if (_isGrounded && _playerProgress.CanClimb == true)
             {
                 //transform.position = new Vector3(_climbTarget.position.x, _climbTarget.position.y + _climbTarget.localScale.y, 0f);
 

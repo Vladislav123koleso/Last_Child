@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 1587325933494273223}
   - component: {fileID: 1271858533248513677}
   - component: {fileID: 4826812825717173013}
+  - component: {fileID: 4536759419348369289}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -373,3 +374,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17413a9e33f67aa4380cad43dc33c1dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _seedsCount: 0
+--- !u!114 &4536759419348369289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8485197347767998611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabef8f25bfb90f47bc6de2c52f9e656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerController: {fileID: 1271858533248513677}
+  _currentStage: 3
+  weakSpeed: 100
+  basicSpeed: 250
+  fastWalkSpeed: 300

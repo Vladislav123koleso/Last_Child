@@ -39,11 +39,11 @@ using UnityEngine;
 
             _fadeImage.color = finalColor;
 
-            // Выключить изображение, если оно стало полностью прозрачным
-            if (finalColor.a == 0f)
-            {
-                _fadeImage.gameObject.SetActive(false);
-            }
+            //
+            //if (finalColor.a == 0f)
+            //{
+            //    _fadeImage.gameObject.SetActive(false);
+            //}
         }
     public bool IsFadeImageActive()
     {

@@ -11,7 +11,7 @@ namespace LastChild
 
         [SerializeField] private float weakSpeed = 100.0f;
         [SerializeField] private float basicSpeed = 250f;
-        [SerializeField] private float fastWalkSpeed = 400f;
+        [SerializeField] private float fastWalkSpeed = 300f;
 
         public bool CanClimb { get; set; }
         public bool CanCrawl { get; set; }
@@ -26,7 +26,7 @@ namespace LastChild
 
         public void ProgressToNextStage()
         {
-            if (_currentStage < 6) // Предельный этап
+            if (_currentStage < 4) // Предельный этап
             {
                 _currentStage++;
                 UpdatePlayerAbilities();
@@ -39,8 +39,8 @@ namespace LastChild
             {
                 case 0: // начальное состояние персонажа
                     _playerController.SetMovementSpeed(weakSpeed);
-                    CanClimb = false;
                     CanCrawl = true;
+                    CanClimb = false;
                     CanJump = false;
                     CanMoveObjects = false;
                     break;
@@ -62,8 +62,26 @@ namespace LastChild
                     break;
 
                 case 3: // 
+                    _playerController.SetMovementSpeed(fastWalkSpeed);
+                    CanClimb = true;
+                    CanCrawl = true;
+                    CanJump = true;
                     CanMoveObjects = true;
                     break;
+            }
+        }
+
+        private void SaveProgress()
+        {
+            PlayerPrefs.SetInt("PlayerStage", _currentStage); // Сохраняем текущий уровень в PlayerPrefs
+            PlayerPrefs.Save(); // Применяем сохранение
+        }
+
+        private void LoadProgress()
+        {
+            if (PlayerPrefs.HasKey("PlayerStage"))
+            {
+                _currentStage = PlayerPrefs.GetInt("PlayerStage"); // Загружаем сохраненное значение
             }
         }
     }
