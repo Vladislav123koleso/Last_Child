@@ -13,7 +13,6 @@ namespace LastChild
         {
             transform.position = _target.position + _cameraPositionOffset;
         }
-
         private void FixedUpdate()
         {
             transform.position = Vector3.Lerp(transform.position, _target.position + _cameraPositionOffset, Time.fixedDeltaTime);

@@ -32,6 +32,7 @@ namespace LastChild
 
             _playerProgress = GetComponent<PlayerProgress>();
         }
+
         private void FixedUpdate()
         {
             Movement();
@@ -45,6 +46,7 @@ namespace LastChild
                 _rb.velocity = new Vector3(_movementSpeed * Time.fixedDeltaTime * _moveDirection.x, _rb.velocity.y, _rb.velocity.z);
             }
         }
+
         private void GroundedCheck()
         {
             _groundedPosition = new Vector3(transform.position.x, transform.position.y - _groundedOffset, transform.position.z);
@@ -65,6 +67,7 @@ namespace LastChild
                 transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
             }
         }
+
         public void OnJump()
         {
             if (_isGrounded && _playerProgress.CanJump)
@@ -72,6 +75,7 @@ namespace LastChild
                 _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             }
         }
+
         public void OnAction()
         {
             if (_isGrounded && _playerProgress.CanMoveObjects)
@@ -82,6 +86,7 @@ namespace LastChild
                 }
             }
         }
+
         public void OnClimb()
         {
             if (_isGrounded && _playerProgress.CanClimb)
@@ -107,6 +112,7 @@ namespace LastChild
                 _playerProgress.CanClimb = false;
             }
         }
+
         private void OnTriggerExit(Collider other)
         {
             _climbTarget = null;
