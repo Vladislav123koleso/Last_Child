@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ba0a70caeab38489946a4cbb17f995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelProperties: {fileID: 11400000, guid: 455781fd18240894da39677f64e67a58, type: 2}
+  _levelProperties: {fileID: 11400000, guid: f0f94f672da543b4081029647da672f9, type: 2}
 --- !u!4 &482572480
 Transform:
   m_ObjectHideFlags: 0
@@ -1149,9 +1149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1581,7 +1581,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c852af001dae0064e9acaa832f1dadb7, type: 2}
+  - {fileID: 2100000, guid: 4944e2c33c99f9f46a4796e2e746213e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

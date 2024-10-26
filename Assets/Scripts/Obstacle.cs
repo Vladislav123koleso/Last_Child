@@ -13,6 +13,7 @@ namespace LastChild
 
             SetStartConstraints();
         }
+
         private void OnTriggerExit(Collider other)
         {
             SetStartConstraints();
@@ -22,6 +23,7 @@ namespace LastChild
         {
             _rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         }
+
         private void SetStartConstraints()
         {
             _rb.constraints = RigidbodyConstraints.FreezePositionX |
