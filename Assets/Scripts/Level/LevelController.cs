@@ -20,9 +20,7 @@ namespace LastChild
         public void NextLevel()
         {
             if (HasNextLevel)
-            {
                 SceneManager.LoadScene(_levelProperties.NextLevel.SceneName);
-            }
             else
                 LoadMainMenuScene();
         }

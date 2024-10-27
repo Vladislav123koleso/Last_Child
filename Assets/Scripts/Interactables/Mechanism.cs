@@ -33,6 +33,7 @@ namespace LastChild
             for (float i = 0; i < gate.localScale.x; i += Mathf.Abs(step))
             {
                 gate.position = new Vector3(gate.position.x + step, gate.position.y, gate.position.z);
+
                 yield return new WaitForSeconds(Time.deltaTime);
             }
 
