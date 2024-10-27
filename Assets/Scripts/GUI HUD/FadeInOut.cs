@@ -2,7 +2,8 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
-
+namespace LastChild
+{
     public class FadeInOut : MonoBehaviour
     {
         [SerializeField] private Image _fadeImage;
@@ -19,6 +20,7 @@ using UnityEngine;
         {
             StartCoroutine(Fade(1f, _fadeTime));
         }
+
         public void StartFadeOut()
         {
             StartCoroutine(Fade(0f, _fadeTime));
@@ -34,20 +36,17 @@ using UnityEngine;
             while ((currentColor += Time.deltaTime) <= time)
             {
                 _fadeImage.color = Color.Lerp(startColor, finalColor, currentColor / time);
-                yield return null;
+
+                yield return Time.deltaTime;
             }
 
             _fadeImage.color = finalColor;
-
-            //
-            //if (finalColor.a == 0f)
-            //{
-            //    _fadeImage.gameObject.SetActive(false);
-            //}
         }
-    public bool IsFadeImageActive()
-    {
-        return _fadeImage.gameObject.activeSelf;
+
+        public bool IsFadeImageActive()
+        {
+            return _fadeImage.gameObject.activeSelf;
+        }
     }
 }
 
