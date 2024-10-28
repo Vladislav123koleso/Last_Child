@@ -83,7 +83,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Climbing
-  m_Speed: 0.9
+  m_Speed: 0.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1810737267814503283}
@@ -245,7 +245,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: animator_kid
+  m_Name: animator_basic_kid
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: velocity
@@ -284,6 +284,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: sadIdleLeg
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -306,7 +312,7 @@ BlendTree:
   m_Name: Idle/Move
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 1c1a6f7a4ef72754d8f5b663ac3c91d4, type: 3}
+    m_Motion: {fileID: -203655887218126122, guid: 023f60f9bf7c002438d68e6d012633f9, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -314,7 +320,7 @@ BlendTree:
     m_DirectBlendParameter: velocity
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: aeeaa410a4d305141aa6b7e42b85ad82, type: 3}
+    m_Motion: {fileID: -203655887218126122, guid: cfaaec5dbd5f33d4bb9bd0a1ece05709, type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -324,7 +330,7 @@ BlendTree:
   m_BlendParameter: velocity
   m_BlendParameterY: velocity
   m_MinThreshold: 0
-  m_MaxThreshold: 1
+  m_MaxThreshold: 2
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0

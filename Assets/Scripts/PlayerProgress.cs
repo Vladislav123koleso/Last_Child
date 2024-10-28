@@ -13,13 +13,19 @@ namespace LastChild
         [SerializeField] private float basicSpeed = 250f;
         [SerializeField] private float fastWalkSpeed = 300f;
 
+        [SerializeField] private RuntimeAnimatorController _weak;
+        [SerializeField] private RuntimeAnimatorController _basic;
+
         public bool CanClimb { get; set; }
         public bool CanCrawl { get; set; }
         public bool CanJump { get; set; }
         public bool CanMoveObjects { get; set; }
 
+        private Animator _animator;
+
         private void Start()
         {
+            _animator = GetComponentInChildren<Animator>();
             _playerController = GetComponent<PlayerController>();
             UpdatePlayerAbilities();
         }
@@ -38,6 +44,7 @@ namespace LastChild
             switch (_currentStage)
             {
                 case 0: // начальное состояние персонажа
+                    _animator.runtimeAnimatorController = _weak;
                     _playerController.SetMovementSpeed(weakSpeed);
                     CanCrawl = true;
                     CanClimb = false;
@@ -46,6 +53,7 @@ namespace LastChild
                     break;
 
                 case 1: // 
+                    _animator.runtimeAnimatorController = _basic;
                     _playerController.SetMovementSpeed(basicSpeed);
                     CanClimb = true;
                     CanCrawl = true;
@@ -54,6 +62,7 @@ namespace LastChild
                     break;
 
                 case 2: // 
+                    _animator.runtimeAnimatorController = _basic;
                     _playerController.SetMovementSpeed(fastWalkSpeed);
                     CanClimb = true;
                     CanCrawl = true;
@@ -62,6 +71,7 @@ namespace LastChild
                     break;
 
                 case 3: // 
+                    _animator.runtimeAnimatorController = _basic;
                     _playerController.SetMovementSpeed(fastWalkSpeed);
                     CanClimb = true;
                     CanCrawl = true;
