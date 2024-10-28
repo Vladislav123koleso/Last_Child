@@ -6,6 +6,7 @@ namespace LastChild
     public class SoundPlayer : MonoBehaviour
     {
         [SerializeField] private AudioClip[] _bgMusic;
+        [SerializeField] private float _volume = 0.5f;
 
         private AudioSource _audioSource;
 
@@ -14,6 +15,8 @@ namespace LastChild
         private void Start()
         {
             _audioSource = GetComponent<AudioSource>();
+
+            _audioSource.volume = _volume;
 
             _audioSource.clip = _bgMusic[_clipIndex];
 
