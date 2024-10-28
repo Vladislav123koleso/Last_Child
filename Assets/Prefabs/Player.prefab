@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 5218367740225008229}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -242,7 +242,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.2
+  m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8485197347767998611
 GameObject:
@@ -328,8 +328,8 @@ MonoBehaviour:
   _movementSpeed: 250
   _jumpForce: 5
   _climbHeight: 1
-  _groundedOffset: -0.2
-  _groundedRadius: 0.3
+  _groundedOffset: 0
+  _groundedRadius: 0.15
   _groundLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -362,9 +362,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 1271858533248513677}
   _currentStage: 3
-  weakSpeed: 100
+  weakSpeed: 125
   basicSpeed: 150
-  fastWalkSpeed: 200
+  fastWalkSpeed: 175
+  _weak: {fileID: 9100000, guid: bd312a15eec177a4390710690f6ce565, type: 2}
+  _basic: {fileID: 9100000, guid: 8823d0715b013424dbde46d981cbeaa5, type: 2}
 --- !u!54 &7977826667951172243
 Rigidbody:
   m_ObjectHideFlags: 0
