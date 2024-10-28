@@ -53,7 +53,7 @@ namespace LastChild
                     break;
 
                 case 1: // 
-                    _animator.runtimeAnimatorController = _basic;
+                    _animator.runtimeAnimatorController = _weak;
                     _playerController.SetMovementSpeed(basicSpeed);
                     CanClimb = true;
                     CanCrawl = true;

@@ -96,8 +96,11 @@ namespace LastChild
 
                     if (item.GetComponentInParent<Obstacle>() && _isPushing == false)
                     {
-                        _isPushing = true;
-                        _animator.SetTrigger("startPush");
+                        SetStatePushing(true);
+                    }
+                    else if (_isPushing)
+                    {
+                        SetStatePushing(false);
                     }
                 }
             }
@@ -165,12 +168,14 @@ namespace LastChild
 
             if (_isPushing && other.GetComponentInParent<Obstacle>())
             {
-                _isPushing = false;
-                _animator.SetTrigger("endPush");
-                Debug.Log("Inside");
+                SetStatePushing(false);
             }
+        }
 
-            Debug.Log("Outside");
+        private void SetStatePushing(bool isPushing)
+        {
+            _isPushing = isPushing;
+            _animator.SetBool("isPushing", isPushing);
         }
 
         public void SetMovementSpeed(float speed)
