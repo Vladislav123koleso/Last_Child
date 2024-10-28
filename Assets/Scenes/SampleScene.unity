@@ -23010,25 +23010,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 554739261}
-    - target: {fileID: 1691830895131576291, guid: ce65b166c81b66649a6d3d5fbc112049, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
+    - target: {fileID: 867431173852353306, guid: ce65b166c81b66649a6d3d5fbc112049, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1996693374226979557, guid: ce65b166c81b66649a6d3d5fbc112049, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 554739261}
-    - target: {fileID: 2236177659906752927, guid: ce65b166c81b66649a6d3d5fbc112049, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2691053943284677688, guid: ce65b166c81b66649a6d3d5fbc112049, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3512910628430187177, guid: ce65b166c81b66649a6d3d5fbc112049, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5272985927117240184, guid: ce65b166c81b66649a6d3d5fbc112049, type: 3}
       propertyPath: m_IsActive
