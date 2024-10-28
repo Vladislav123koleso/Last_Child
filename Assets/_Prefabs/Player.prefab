@@ -450,6 +450,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4083501151425157549, guid: 4970c94e215d9324594dfaa80a926233, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083501151425157549, guid: 4970c94e215d9324594dfaa80a926233, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083501151425157549, guid: 4970c94e215d9324594dfaa80a926233, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 4970c94e215d9324594dfaa80a926233, type: 3}
       propertyPath: m_Controller
       value: 
