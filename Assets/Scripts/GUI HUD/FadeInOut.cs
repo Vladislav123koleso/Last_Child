@@ -2,8 +2,6 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
-namespace LastChild
-{
     public class FadeInOut : MonoBehaviour
     {
         [SerializeField] private Image _fadeImage;
@@ -47,6 +45,7 @@ namespace LastChild
         {
             return _fadeImage.gameObject.activeSelf;
         }
+
+
     }
-}
 

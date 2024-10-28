@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject pausePanel;
 
-    //public FadeInOut fadeInOut;
+    public GameObject _fadeInOut;
 
     private bool isPaused = false;
 
@@ -40,6 +40,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
+    public void RestartScene()
+    {
+        Time.timeScale = 1;
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
+    }
+
 
 
     private void TogglePause()
