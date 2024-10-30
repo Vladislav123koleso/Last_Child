@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject settingsPanel;
     public GameObject pausePanel;
-
+    
     public GameObject _fadeInOut;
 
     private bool isPaused = false;
