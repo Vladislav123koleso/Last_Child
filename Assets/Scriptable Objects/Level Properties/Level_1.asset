@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _title: Level_1
   _sceneName: SampleScene
-  _nextLevel: {fileID: 11400000, guid: f0f94f672da543b4081029647da672f9, type: 2}
+  _nextLevel: {fileID: 11400000, guid: d96317ae527115e4a8656c3d114a922a, type: 2}
