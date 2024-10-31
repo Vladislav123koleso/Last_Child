@@ -9,6 +9,8 @@ public class MainMenuLogic : MonoBehaviour
     private void Start()
     {
         settingsPanel.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void startButton()
