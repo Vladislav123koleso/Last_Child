@@ -8,15 +8,40 @@ namespace LastChild
         [SerializeField] private int _seedsNeeded;
         [SerializeField] private FadeInOut _fadeInOut;
 
+        private FallCutSceneTrigger _finishCutScene;
+
+        private void Start()
+        {
+            _finishCutScene = FindObjectOfType<FallCutSceneTrigger>();
+
+            if (_finishCutScene != null)
+            {
+                _finishCutScene.EndScene += StartOnFinish;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (_finishCutScene != null)
+            {
+                _finishCutScene.EndScene -= StartOnFinish;
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.transform.root.TryGetComponent(out Bag bag))
             {
                 if (_seedsNeeded <= bag.SeedsCount)
-                { 
-                    StartCoroutine(OnFinish());
+                {
+                    StartOnFinish();
                 }
             }
+        }
+
+        public void StartOnFinish()
+        {
+            StartCoroutine(OnFinish());
         }
 
         private IEnumerator OnFinish()

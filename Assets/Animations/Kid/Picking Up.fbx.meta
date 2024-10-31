@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 265fdeec1ef4caa418e78940faa30eec
+guid: a67cf9f2b429c284b919a28af873e38a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -19,7 +19,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
       rotation in copied configuration does not match rotation in animation file:\n\t'leg4_l'
-      : rotation error = 14.764342 deg\n\t'leg4_r' : rotation error = 16.328655 deg\n"
+      : rotation error = 13.380427 deg\n\t'leg4_r' : rotation error = 11.959014 deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
@@ -39,11 +39,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Tripping
+      name: Picking Up
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 83
+      lastFrame: 287
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -54,10 +54,10 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 1
+      keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
