@@ -17,12 +17,29 @@ public class GameManager : MonoBehaviour
         settingsPanel.SetActive(false);
         pausePanel.SetActive(false);
     }
+    
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) /*&& !fadeInOut.IsFadeImageActive()*/)
         {
             pausePanel.SetActive(!pausePanel.activeSelf);
             TogglePause();
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            if (Time.timeScale == 1)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+
         }
     }
 
