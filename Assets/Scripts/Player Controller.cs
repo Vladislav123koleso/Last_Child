@@ -22,6 +22,7 @@ namespace LastChild
         private bool _isGrounded;
         private bool _isClimbing;
         private bool _isPushing;
+        private bool _isCrawling;
         private bool _canClimb;
         private Transform _climbTarget;
 
@@ -77,7 +78,7 @@ namespace LastChild
         {
             if (_playerProgress.CanJump == false) return;
 
-            if (_isGrounded && _isClimbing == false)
+            if (_isGrounded && _isClimbing == false && _isCrawling == false)
             {
                 _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
                 _animator.SetTrigger("jump");
@@ -88,7 +89,7 @@ namespace LastChild
         {
             if (_playerProgress.CanMoveObjects == false) return;
 
-            if (_isGrounded && _isClimbing == false)
+            if (_isGrounded && _isClimbing == false && _isCrawling == false)
             {
                 foreach (var item in Physics.OverlapSphere(_groundedPosition, _groundedRadius, _interactableLayers))
                 {
@@ -105,7 +106,7 @@ namespace LastChild
 
         public void OnClimb()
         {
-            if (_playerProgress.CanClimb == false || _isClimbing) return;
+            if (_playerProgress.CanClimb == false || _isClimbing || _isCrawling) return;
 
             if (_moveDirection.x != 0 && _isGrounded && _canClimb)
             {
@@ -171,6 +172,12 @@ namespace LastChild
             }
 
             Debug.Log("Outside");
+        }
+
+        public void SetStateCrawling(bool isCrawling)
+        {
+            _isCrawling = isCrawling;
+            _animator.SetTrigger("crawl");
         }
 
         public void SetMovementSpeed(float speed)
