@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace LastChild
-{
+
     public class Bag : MonoBehaviour
     {
         private int _seedsCount;
@@ -12,5 +11,4 @@ namespace LastChild
             _seedsCount++;
         }
     }
-}
 
