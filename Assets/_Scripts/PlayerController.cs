@@ -23,6 +23,8 @@ namespace LastChild
         private bool _isClimbing;
         private bool _isPushing;
         private bool _isCrawling;
+        public bool IsCrawling => _isCrawling;
+        private bool _canStand = true;
         private bool _canClimb;
         private Transform _climbTarget;
 
@@ -34,8 +36,8 @@ namespace LastChild
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
-            _animator = GetComponentInChildren<Animator>();
             _playerProgress = GetComponent<PlayerProgress>();
+            _animator = GetComponentInChildren<Animator>();
         }
 
         private void FixedUpdate()
@@ -146,6 +148,16 @@ namespace LastChild
             _isClimbing = false;
         }
 
+        public void OnCrouch()
+        {
+            if (_isGrounded && _isClimbing == false)
+            {
+                if (_canStand == false) return;
+
+                SetStateCrawling();
+            }
+        }
+
         private void OnTriggerStay(Collider other)
         {
             if (_groundLayers.value != 1 << other.gameObject.layer) return;
@@ -179,17 +191,21 @@ namespace LastChild
             _animator.SetBool("isPushing", isPushing);
         }
 
-        public void SetStateCrawling(bool isCrawling)
+        public void SetStateCrawling()
         {
-            _isCrawling = isCrawling;
+            _isCrawling = !_isCrawling;
             _animator.SetTrigger("crawl");
+        }
+
+        public void SetStateStand(bool canStand)
+        {
+            _canStand = canStand;
         }
 
         public void SetMovementSpeed(float speed)
         {
             _movementSpeed = speed;
         }
-
 
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()

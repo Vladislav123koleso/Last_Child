@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace LastChild
 {
@@ -8,24 +7,21 @@ namespace LastChild
     {
         [SerializeField] private BoxCollider _obstacleCollider;
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
-            other.transform.parent.TryGetComponent(out PlayerController controller);
-
-            if (controller != null )
+            if (other.transform.parent.TryGetComponent(out PlayerController controller) && controller.IsCrawling)
             {
-                controller.SetStateCrawling(true);
+                controller.SetStateStand(false);
                 _obstacleCollider.enabled = false;
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            other.transform.parent.TryGetComponent(out PlayerController controller);
-
-            if (controller != null)
+            if (other.transform.parent.TryGetComponent(out PlayerController controller) && controller.IsCrawling)
             {
-                controller.SetStateCrawling(false);
+                controller.SetStateStand(true);
+                controller.SetStateCrawling();
                 _obstacleCollider.enabled = true;
             }
         }
